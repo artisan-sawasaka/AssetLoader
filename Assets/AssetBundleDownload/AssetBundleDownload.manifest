@@ -1,0 +1,10 @@
+ManifestFileVersion: 0
+CRC: 4283846771
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: assets_assetbundle_home_bg.unity3d
+      Dependencies: {}
+    Info_1:
+      Name: assets_assetbundle_icon.unity3d
+      Dependencies: {}
