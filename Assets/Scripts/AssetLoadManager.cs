@@ -114,7 +114,7 @@ public class AssetLoadManager : MonoBehaviour
 
 	public ResourceInfo LoadAssetBundleAsset(string path, string name)
 	{
-		var info = GetResourceInfo(path);
+		var info = GetResourceInfo(Path.Combine(path, name));
 		StartCoroutine(LoadAssetBundleAssetData(info, name));
 
 		return info;
@@ -208,7 +208,7 @@ public class AssetLoadManager : MonoBehaviour
 	IEnumerator LoadAssetBundleAssetData(ResourceInfo info, string name)
 	{
 		var assetBundleInfo = info.assetBundleInfo;
-		yield return LoadAssetBundleBase(assetBundleInfo, Path.Combine(info.path, name));
+		yield return LoadAssetBundleBase(assetBundleInfo, info.path);
 
 		var request = assetBundleInfo.ab.LoadAssetAsync<UnityEngine.Object>(name);
 		yield return request;
